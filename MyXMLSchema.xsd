@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="https://www.w3schools.com"
+    elementFormDefault="qualified"
+    xmlns="https://www.w3schools.com"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="USERS-DOCUMENTS-CHANGE_HISTORY-OFFLINE_PRESENTATION">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="USERS" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+        <xs:element name="USER" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NAME">
+                <xs:complexType>
+                  <xs:sequence>
+              <xs:element name="FIRST_NAME" type="xs:ID"></xs:element>
+              <xs:element name="SURNAME" type="xs:string"></xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="UID" type="xs:IDREFS" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="DOCUMENTS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOCUMENT" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="DNAME" type="xs:ID"></xs:element>
+                    <xs:element name="CREATE_DATE" type="xs:string"></xs:element>
+                    <xs:element name="OWNER_ID" type="xs:IDREF"></xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        
+        <xs:element name="CHANGE_HISTORY" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOCNAME" type="xs:IDREF"></xs:element>
+              <xs:element name="USER_ID" type="xs:IDREF"></xs:element>
+            <xs:element name="CHANGE_DATE" type="xs:date"></xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        
+      <xs:element name="OFFLINE_PRESENTATION" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOCNAME" type="xs:IDREF"></xs:element>
+              <xs:element name="PRESENTATION" type="xs:string"></xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
